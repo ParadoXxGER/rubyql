@@ -35,7 +35,7 @@ For a better understanding another plain ruby example:
 ``` ruby
   class PlainQuery < RubyQL
     def query
-      {"firstname"=>"", "lastname"=>"", "email"=>"niklas.hanft@outlook.com", "id"=>1337, "another_attribute"=>"Hello World"}
+      {"firstname"=>"Niklas", "lastname"=>"Hanft", "email"=>"niklas.hanft@outlook.com", "id"=>1337, "another_attribute"=>"Hello World"}
     end
   end
 ```
@@ -44,7 +44,10 @@ The method is only returning a simple hash. Now we can execute queries:
 
 ```
   PlainQuery.new({"firstname"=>"", "lastname"=>"", "email"=>"niklas.hanft@outlook.com", "id"=>""}).execute
-  => {"firstname"=>"", "lastname"=>"", "email"=>"niklas.hanft@outlook.com", "id"=>1337}
+  => {"firstname"=>"Hanft", "lastname"=>"Niklas", "email"=>"niklas.hanft@outlook.com", "id"=>1337}
+  
+  PlainQuery.new({"email"=>"niklas.hanft@outlook.com", "id"=>"", "another_attribute"=>""}).execute
+  => {"email"=>"niklas.hanft@outlook.com", "id"=>1337, "another_attribute"=>"Hello World"}
 ```
 
 As this is static, it doesn't really make sense, but for understanding it might be ok to use it this way. But mainly it
