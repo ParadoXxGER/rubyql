@@ -21,8 +21,6 @@ class RubyQL
     end
   end
 
-  private
-
   def response_attr
     @params.select do |key, value|
       value == '' || value.nil?
