@@ -7,6 +7,8 @@ RubyQL loves it when its used together with ActiveRecord 🤤
 
 Example:
 ``` ruby
+  require 'rubyql'
+  
   class UserQuery < RubyQL
     def query
       User.find_by(query_params).attributes
@@ -36,6 +38,8 @@ As you can see we left the wanted attributes blank, so rubyql will fill them out
 For a better understanding another plain ruby example:
 
 ``` ruby
+  require 'rubyql
+  
   class PlainQuery < RubyQL
     def query
       {"firstname"=>"Niklas", "lastname"=>"Hanft", "email"=>"niklas.hanft@outlook.com", "id"=>1337, "another_attribute"=>"Hello World"}
