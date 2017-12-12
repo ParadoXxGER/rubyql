@@ -3,7 +3,7 @@
 
 RubyQL is a query language designed for very flexible rest apis or plain ruby hashes.
 
-*RubyQL loves it, being used with ActiveRecord 🤤*
+RubyQL loves it, being used with ActiveRecord 🤤
 
 Example:
 ``` ruby
