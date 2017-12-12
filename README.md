@@ -1,6 +1,8 @@
 # RubyQL
 ## A query language for ruby hashes
 
+[![Gem Version](https://badge.fury.io/rb/rubyql.svg)](https://badge.fury.io/rb/rubyql)
+
 RubyQL is a query language designed for very flexible rest apis or plain ruby hashes.
 
 RubyQL loves it when its used together with ActiveRecord 🤤
