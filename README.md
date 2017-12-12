@@ -15,8 +15,9 @@ Example:
 ```
 
 The class we created overwrites the query method, to provide a custom mechanism which should return a hash. `query_params` is 
-the hash which holds the provided parameter, like `WHERE` in SQL." **IMPORTANT**: `.attributes` is necessary for 
-ActiveRecord, only returning the actual hash, not the ActiveModel object.
+the hash which holds the provided parameter, like `WHERE` in SQL.
+ 
+**IMPORTANT**: `.attributes` is necessary for ActiveRecord, only returning the actual hash, not the ActiveModel object.
 
 Usage:
 ```
@@ -53,6 +54,14 @@ The method is only returning a simple hash. Now we can execute queries:
 ```
 
 As this is static, it doesn't really make sense, but for understanding it might be ok to use it this way. But mainly it
-should be used with a database or some dynamic function which return some hashes.
+should be used with a database orm or some dynamic functions which return hashes.
+
+Advanced usage:
+
+*Coming soon*
+
+
+
+
 
 
