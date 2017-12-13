@@ -150,7 +150,7 @@ The response:
 
 ``` json
 {
-    "id": 1,
+	"email": "niklas.hanft@outlook.com",
     "firstname": "Niklas"
 }
 ```
