@@ -13,7 +13,7 @@ require 'rubyql'
 
 class UserQuery < RubyQL
   def query
-    result = User.includes(:posts).find_by(query_params)
+    result = User.find_by(query_params)
     result.attributes unless result.nil?
   end
 end
@@ -25,7 +25,7 @@ the hash which holds the provided parameter, like `WHERE` in SQL.
 **IMPORTANT**: `.attributes` is necessary for ActiveRecord, only returning the actual hash, not the ActiveModel object.
 
 ## Usage:
-```
+``` ruby
 UserQuery.new({"firstname"=>"", "lastname"=>"", "email"=>"niklas.hanft@outlook.com"}).execute
 => {"firstname"=>"Niklas", "lastname"=>"Hanft", "email"=>"niklas.hanft@outlook.com"}
 
@@ -52,7 +52,7 @@ end
 
 The method is only returning a simple hash. Now we can execute queries:
 
-```
+``` ruby
 PlainQuery.new({"firstname"=>"", "lastname"=>"", "email"=>"niklas.hanft@outlook.com", "id"=>""}).execute
 => {"firstname"=>"Hanft", "lastname"=>"Niklas", "email"=>"niklas.hanft@outlook.com", "id"=>1337}
 
@@ -67,7 +67,7 @@ should be used with a database orm or some dynamic functions which return hashes
 
 A typical API in Rails
 
-```
+``` ruby
 module Api
   module V1
     class UserQueryController < ApiController
@@ -89,12 +89,13 @@ end
 ```
 
 The Query class
-```
+
+``` ruby
 require 'rubyql'
 
 class UserQuery < RubyQL
   def query
-    result = User.includes(:posts).find_by(query_params)
+    result = User.find_by(query_params)
     result.attributes unless result.nil?
   end
 end
@@ -102,7 +103,7 @@ end
 
 Routing:
 
-```
+``` ruby
 namespace :api, defaults: { format: :json } do
   namespace :v1 do
     post '/user-query', to: 'user_query#execute'
@@ -112,7 +113,7 @@ end
 
 A request:
 
-```
+``` json
 POST /api/v1/user-query
 {
 	"email": "niklas.hanft@outlook.com",
@@ -125,7 +126,7 @@ POST /api/v1/user-query
 
 The response:
 
-```
+``` json
 {
     "id": 1,
     "firstname": "Niklas",
@@ -137,7 +138,7 @@ The response:
 
 A second request:
 
-```
+``` json
 POST /api/v1/user-query
 {
 	"email": "niklas.hanft@outlook.com",
@@ -147,7 +148,7 @@ POST /api/v1/user-query
 
 The response:
 
-```
+``` json
 {
     "id": 1,
     "firstname": "Niklas"
