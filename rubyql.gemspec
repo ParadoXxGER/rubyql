@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'rubyql'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.date        = '2017-12-12'
   s.summary     = 'Query language for ruby hashes'
   s.description = 'Query language for ruby hashes'
