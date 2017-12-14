@@ -1,4 +1,5 @@
 require 'json'
+require_relative './init_error'
 
 class RubyQL
   attr_accessor :params
@@ -9,7 +10,7 @@ class RubyQL
     elsif params.is_a?(Hash)
       @params = params
     else
-      raise InitError
+      raise InitError, "Cant initialize with a #{params.class} please provide a valid JSON or Hash"
     end
   end
 
